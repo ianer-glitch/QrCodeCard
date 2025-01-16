@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { apiService } from '../../core/apiService';
 import { CommonModule } from '@angular/common';
+import { localStorageService } from '../../core/localStorageService';
 
 
 @Component({
@@ -11,14 +12,17 @@ import { CommonModule } from '@angular/common';
 })
 export class QrCodeComponent {
   
-  constructor(private api : apiService) {
+  constructor(private api : apiService,private local:localStorageService) {
   }
 
   imgUrl = signal('')
 
   ngOnInit(){
-    this.api.getQrCode("150","someText").subscribe((response)=>
-      this.imgUrl.set(URL.createObjectURL(response))
-    )
+    const data = this.local.getLocalStorage("qrCode")
+    if(data){
+      this.api.getQrCode("200",data).subscribe((response)=>
+        this.imgUrl.set(URL.createObjectURL(response))
+      )
+    }
   }
 }

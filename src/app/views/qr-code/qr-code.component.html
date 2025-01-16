@@ -1,9 +1,8 @@
-<div class="img"></div>
+<div class="img" [ngStyle]="{'background-image':'url(' + imgUrl() + ')'}"></div>
 
 
 <style>
     .img{
-        background-image: url(https://picsum.photos/200/200);
         width: 400px;
         height: 400px;
         background-repeat: no-repeat;

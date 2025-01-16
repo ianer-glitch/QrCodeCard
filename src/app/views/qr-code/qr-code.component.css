@@ -1,0 +1,50 @@
+.qr-code-container{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+}
+.inner-container{
+    perspective: 500px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    
+    
+}
+
+.img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    object-position: center;
+    background-position: center;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 1px 1px 10px 1px rgb(214, 175, 175);
+}
+
+.top{
+    transform: translate3d(0,0,6px);
+    
+}
+
+.middle{
+    transform: translate3d(0,0,0px);
+    
+
+}
+
+.botton{
+    transform: translate3d(0,0,-6px);
+
+}

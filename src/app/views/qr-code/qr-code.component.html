@@ -1,12 +1,17 @@
-<div class="img" [ngStyle]="{'background-image':'url(' + imgUrl() + ')'}"></div>
+<section class="qr-code-container" >
+    
+    <div
+        class="inner-container"
+        id="qr-code-id" 
+        [ngStyle]="{'transform':'rotateY('+rotY()+'deg) rotateX('+rotX()+'deg)'}"
+        >
+            <div class="img top" [ngStyle]="{'background-image':'url(' + imgUrl() + ')'}"></div>
+            <div class="img middle" [ngStyle]="{'background-image':'url(' + imgUrl() + ')'}"></div>
+            <div class="img botto" [ngStyle]="{'background-image':'url(' + imgUrl() + ')'}"></div>
+
+        </div>    
+    
+</section>
 
 
-<style>
-    .img{
-        width: 400px;
-        height: 400px;
-        background-repeat: no-repeat;
-        object-fit: contain;
-        object-position: center;
-    }
-</style>
+
